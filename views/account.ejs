@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>account</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  记账本<br>
+   <a href='/account/create'>记账</a><br>
+   <form method='post' action='/logout'>
+   <button>退出登录</button>
+   </form><br>
+  <% accounts.forEach(account=>{ %>
+  <span>
+    项目<h1><%= account.name %></h1><br>
+    金额<h1><%= account.price %></h1><br>
+    日期<h1><%= moment(account.time).format('YYYY-MM-DD') %></h1><br>
+    <a href='/account/<%=account.id%>'>删除项目</a>
+    <span><hr>
+   <%  })%>
+  </body>
+</html>
